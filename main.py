@@ -1,13 +1,23 @@
 
 users = []
 
+print("комманда help для помощи")
+
 while True:
     comm = input()
     if comm == "quit":
         break
     elif comm == "add":
         user = {}
-        user['name'] = input("Введите имя пользователя:\n")
+
+        while True:
+            user['name'] = input("Введите имя пользователя:\n")
+            if not user['name']:
+                print("Имя пользователя не может быть пустым")
+                continue
+            
+            break
+
         age = ""
         while True:
             age = input("Введите возраст пользователя:\n")
